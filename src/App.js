@@ -1,6 +1,8 @@
-import logo from './attain2.svg';
+//import logo from './attain2.svg';
 import './App.css';
 import React from 'react';
+import tasks from './test/tasks.json';
+import Tasks from './componentes/tasks';
 
 
 /* 
@@ -31,55 +33,24 @@ import React from 'react';
        <h2>{props.title}</h2>
    );
 } */
-
-class Helloworld extends React.Component{
-    state = {
-      show:true
-    }
-
-    ToggleShow(){
-      this.setState({show: !this.state.show})
-    }
-
-    render(){
-       if(this.state.show){
-         return <div id="hello">
-         <h3>{this.props.subtitle}</h3>
-          {this.props.text}
-          <button onClick={this.ToggleShow.bind(this)}>Toggle show</button>
-       </div>
-       
-       }else{
-         return <div>
-         <h1>No hay elementos</h1>
-         <button onClick={this.ToggleShow.bind(this)}>Toggle show</button>
-        </div>
-          
-       }
-      
-    }
-}
-
-
-
-
-function App() {
-  return (
-    
-    <div class="load">
-      
-    
-
-
-       <div>
-          <Helloworld text="Hola" subtitle="serch"/>
-          <Helloworld text="Mundo" subtitle="serch"/>
-          <Helloworld text="React" subtitle="serch"/>
-       </div>
-       
+console.log(tasks);
+class App extends React.Component{
    
-</div>
-  );
+   state = {
+       tasks: tasks
+   }
+    render(){
+        return (
+          <div>
+            
+             <Tasks tasks={this.state.tasks} />
+          </div>
+
+    )
+    }
+
+    
+   
 }
  
 
