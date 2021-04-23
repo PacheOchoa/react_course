@@ -42,7 +42,7 @@ class App extends React.Component{
     render(){
         return (
           <div>
-            
+            {/* Se le asigna el estado a el componente que itera el arreglo */}
              <Tasks tasks={this.state.tasks} />
           </div>
 
