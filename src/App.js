@@ -3,6 +3,8 @@ import './App.css';
 import React from 'react';
 import tasks from './test/tasks.json';
 import Tasks from './componentes/tasks';
+import TaskForm from './componentes/taskForm';
+
 
 
 /* 
@@ -42,8 +44,10 @@ class App extends React.Component{
     render(){
         return (
           <div>
+            <TaskForm />
             {/* Se le asigna el estado a el componente que itera el arreglo */}
              <Tasks tasks={this.state.tasks} />
+             
           </div>
 
     )
